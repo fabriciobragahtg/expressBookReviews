@@ -16,7 +16,7 @@ app.use("/customer/auth/*", function auth(req, res, next) {
         return res.status(403).json({ message: "No token provided" });
     }
 
-    jwt.verify(token, "your_jwt_secret", (err, user) => {
+    jwt.verify(token, "fabriciobraga", (err, user) => {
         if (err) return res.status(403).json({ message: "Invalid token" });
         req.user = user;
         next();
